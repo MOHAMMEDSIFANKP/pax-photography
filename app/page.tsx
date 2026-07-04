@@ -15,41 +15,43 @@ import {
   Video,
   Sparkles,
   ExternalLink,
+  QrCode,
 } from "lucide-react";
 import { InstagramIcon, FacebookIcon } from "./components/SocialIcons";
 // logo
-import logo from "@/public/logo/logo.jpg";
+import logo from "@/public/logo/logo.png";
+// gallary images
+import img1 from "@/public/gallery/gallery1.webp";
+import img2 from "@/public/gallery/gallery2.webp";
+import img3 from "@/public/gallery/gallery3.webp";
+import img4 from "@/public/gallery/gallery4.webp";
+import img5 from "@/public/gallery/gallery5.webp";
 
 const GALLERY = [
   {
-    src: "https://images.unsplash.com/photo-1492175742197-ed20dc5a6bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    image: img1,
     label: "Bridal",
     cat: "Wedding",
   },
   {
-    src: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    image: img2,
     label: "Romance",
     cat: "Couple",
   },
   {
-    src: "https://images.unsplash.com/photo-1488846343176-08e05ab9a2a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    image: img3,
     label: "Portrait",
     cat: "Modeling",
   },
   {
-    src: "https://images.unsplash.com/photo-1664714844985-adb4fd6572ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    image: img4,
     label: "Candid",
     cat: "Couple",
   },
   {
-    src: "https://images.unsplash.com/photo-1588433963304-7edb7af03908?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+    image: img5,
     label: "Bouquet",
     cat: "Wedding",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1614618586684-7afae48a15d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
-    label: "Fashion",
-    cat: "Modeling",
   },
 ];
 
@@ -324,7 +326,7 @@ export default function Home() {
             grabCursor
           >
             {filtered.map((item, i) => (
-              <SwiperSlide key={item.src} style={{ width: "72vw", maxWidth: 280 }}>
+              <SwiperSlide key={i} style={{ width: "72vw", maxWidth: 280 }}>
                 <div
                   onClick={() => scrollTo(i)}
                   className="relative overflow-hidden rounded-2xl cursor-pointer"
@@ -336,7 +338,7 @@ export default function Home() {
                   }}
                 >
                   <img
-                    src={item.src}
+                    src={item.image.src}
                     alt={item.label}
                     className="w-full h-full object-cover"
                     style={{ filter: i !== currentIndex ? "brightness(0.75) saturate(0.9)" : "brightness(1)" }}
@@ -428,6 +430,24 @@ export default function Home() {
               <div>
                 <p className="text-[#bbb] text-[9px] tracking-widest uppercase">Instagram</p>
                 <p className="text-[#1a1a1a] text-sm">@pax__photography</p>
+              </div>
+            </a>
+
+            <a
+              href="https://www.qrcodechimp.page/page/t7o4liof3kf6?v=chk1766403588"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 group"
+            >
+              <div
+                className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-105"
+                style={{ background: "rgba(23,162,184,0.1)" }}
+              >
+                <QrCode size={16} className="text-[#17A2B8]" />
+              </div>
+              <div>
+                <p className="text-[#bbb] text-[9px] tracking-widest uppercase">Snap Share</p>
+                <p className="text-[#1a1a1a] text-sm">View digital profile</p>
               </div>
             </a>
           </div>
