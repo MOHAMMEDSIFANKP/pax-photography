@@ -235,9 +235,9 @@ export default function Home() {
             {/* Stat chips */}
             <div className="flex gap-6 mt-1">
               {[
-                { label: "Experience", val: "11+ yrs" },
-                { label: "Happy Clients", val: "300+" },
-                { label: "Projects", val: "500+" },
+                { label: "Experience", val: "10+ yrs" },
+                { label: "Happy Clients", val: "1000+" },
+                { label: "Projects", val: "1000+" },
               ].map((s) => (
                 <div key={s.label} className="flex flex-col items-center">
                   <span className="text-[#1a1a1a] font-semibold text-base">{s.val}</span>
